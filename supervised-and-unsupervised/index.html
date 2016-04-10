@@ -11,7 +11,7 @@
 
     <link rel="shortcut icon" href="../favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=67b2569635">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=9a99efa5fd">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
 
     <link rel="canonical" href="index.html">
@@ -22,8 +22,8 @@
     <meta property="og:title" content="On supervised and unsupervised learning. Gradient descent demystified.">
     <meta property="og:description" content="Machine learning is a broad field with plenty of applications. In order to get a better overview of them, let's assume that there are two types of problems - solved either with supervised or unsupervised learning. That said, please note this is just one of the several possible ways to">
     <meta property="og:url" content="http://localhost:2368/supervised-and-unsupervised/">
-    <meta property="article:published_time" content="2016-04-09T19:59:00.000Z">
-    <meta property="article:modified_time" content="2016-04-10T15:51:46.115Z">
+    <meta property="article:published_time" content="2016-04-07T19:59:00.000Z">
+    <meta property="article:modified_time" content="2016-04-10T15:59:25.288Z">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="On supervised and unsupervised learning. Gradient descent demystified.">
     <meta name="twitter:description" content="Machine learning is a broad field with plenty of applications. In order to get a better overview of them, let's assume that there are two types of problems - solved either with supervised or unsupervised learning. That said, please note this is just one of the several possible ways to">
@@ -43,8 +43,8 @@
     },
     "headline": "On supervised and unsupervised learning. Gradient descent demystified.",
     "url": "http://localhost:2368/supervised-and-unsupervised/",
-    "datePublished": "2016-04-09T19:59:00.000Z",
-    "dateModified": "2016-04-10T15:51:46.115Z",
+    "datePublished": "2016-04-07T19:59:00.000Z",
+    "dateModified": "2016-04-10T15:59:25.288Z",
     "description": "Machine learning is a broad field with plenty of applications. In order to get a better overview of them, let&#x27;s assume that there are two types of problems - solved either with supervised or unsupervised learning. That said, please note this is just one of the several possible ways to"
 }
     </script>
@@ -95,7 +95,7 @@
         <header class="post-header">
             <h1 class="post-title">On supervised and unsupervised learning. Gradient descent demystified.</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2016-04-09">09 April 2016</time> 
+                <time class="post-date" datetime="2016-04-07">07 April 2016</time> 
             </section>
         </header>
 
@@ -119,25 +119,24 @@
 
 <p>We are now going to use linear regression to predict a single output value. The notion that we guess the price for a new house, one we don't have data about, is resolved around the hypothesis function. In our case, this is a straight line which tries to fit (cross, touch) as many training examples as possible. Its formula is the same as the formula for a linear function, but with slightly different notation.</p>
 
-<p></p><center> <br>
-$h_\theta(x) = \theta_0 + \theta_1 x$ 
+<p></p><center>$h_\theta(x) = \theta_0 + \theta_1 x$  <br>
 $\theta_0 , \theta_1 \hbox{ - adjustable params}$
-</center>
+</center> <br>
+
 
 <p>The parameters determine the shape of the function. Our job is to make sure they are correct, less accurate values will result in false output prediction. Since there are no constraints on the parameters, we could pick a few starting values and using trial and error determine whether they are correct. In simpler scenarios, we can always take a glance at a chart. This technique is not foolproof but luckily there is a better option - use cost function.</p>
 
-<p></p><center> <br>
-$J(\theta_0, \theta_1) = \dfrac {1}{2m} \displaystyle \sum_{i=1}^m \left (h_\theta (x^{(i)}) - y^{(i)} \right)^2$
-</center>
+<p></p><center>$J(\theta_0, \theta_1) = \dfrac {1}{2m} \displaystyle \sum_{i=1}^m \left (h_\theta (x^{(i)}) - y^{(i)} \right)^2$ <br>
+</center> <br>
+
 
 <p>Without going into details, this function takes theta parameters and returns a value. The lower this value is, the better params we selected. We also want to avoid a situation when the hypothesis function is underfitted, which means that it aligns with several training examples only. Our final ingredient is going to be gradient descent. This algorithm has one job, to find the suitable theta parameters.</p>
 
 <p>While there's an extensive article about gradient descent on <a href="https://www.wikiwand.com/en/Gradient_descent">wikipedia</a> I will try to be as brief as I can get. Gradient descent is a general optimization algorithm used for finding local maximum or minimum values. You might be familiar with e.g. hill-climbing algorithm or overall, greedy algorithms. These algorithms  are known for always choosing the best possible step whereas sometimes the slighly worse solution in few steps earlier, could lead to a totally different, much better final result. Gradient descent uses the same approach, either make sure that there is only one local minimum or seed it with the correct starting values.</p>
 
 <p><img src="../content/images/2016/04/gradient-descent.png" alt="">
-</p><center> <br>
-<em>Gradient descent algorithm - depending on a starting point, a different local optimum is found</em>
-</center>
+</p><center><em>Gradient descent algorithm - depending on a starting point, a different local optimum is found</em></center> <br>
+
 
 <p>The cost function combined with the gradient descent is a duo that delivers. If everything went fine, we got a proper pair of theta1, theta2 values and the hypothesis function can be used to predict house prices with very solid confidence. </p>
 
@@ -152,9 +151,8 @@ $J(\theta_0, \theta_1) = \dfrac {1}{2m} \displaystyle \sum_{i=1}^m \left (h_\the
 <p>We are going to assign labels 0(benign) or 1(malignant) to patients' cases so it would be optimal if the hypothesis function returned values between 0 and 1. A linear function can't do that so allow me to introduce the sigmoid function!</p>
 
 <p><img src="../content/images/2016/04/Logistic-curve-svg.png" alt="">
-</p><center> <br>
-<em>The sigmoid function</em>
-</center>
+</p><center><em>The sigmoid function</em></center> <br>
+
 
 <p>This function asymptotes at 0 and 1 and has everything we need. If the result is let's say 0.3, it means that it has 30% chance of belonging in the group 1 and 70% chance of being in the group 0. As a result, it gets labelled as benign tumor.</p>
 
@@ -166,7 +164,6 @@ $J(\theta_0, \theta_1) = \dfrac {1}{2m} \displaystyle \sum_{i=1}^m \left (h_\the
 
 <p>Sources: <br>
 [1] Wikipedia
- <br>
 [2] Coursera</p>
         </section>
 
@@ -207,10 +204,16 @@ $J(\theta_0, \theta_1) = \dfrac {1}{2m} \displaystyle \sum_{i=1}^m \left (h_\the
 </main>
 
 <aside class="read-next">
-    <a class="read-next-story prev no-cover" href="../neural-networks-story-about-how-computers-got-nervous/">
+    <a class="read-next-story no-cover" href="../neural-networks-story-about-how-computers-got-nervous/">
         <section class="post">
             <h2>Neural networks - a nervous shock</h2>
             <p>Coming soon!…</p>
+        </section>
+    </a>
+    <a class="read-next-story prev " style="background-image: url(../content/images/2016/03/machina.png)" href="../getting-started/">
+        <section class="post">
+            <h2>Getting started</h2>
+            <p>Since you've already made your way here, there is a good chance you are one of those who find…</p>
         </section>
     </a>
 </aside>
@@ -229,8 +232,8 @@ $J(\theta_0, \theta_1) = \dfrac {1}{2m} \displaystyle \sum_{i=1}^m \left (h_\the
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     
 
-    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=67b2569635"></script>
-    <script type="text/javascript" src="../assets/js/index.js?v=67b2569635"></script>
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=9a99efa5fd"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=9a99efa5fd"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     <script type="text/x-mathjax-config">
