@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>ML Odyssey</title><description>Blog about machine learning, statistics and other Computer Science related stuff. I write about things I've learned while taking online courses.</description><link>http://localhost:2368/</link><generator>Ghost 0.7</generator><lastBuildDate>Sun, 10 Apr 2016 15:44:54 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>On supervised and unsupervised learning. Gradient descent demystified.</title><description>&lt;p&gt;Machine learning is a broad field with plenty of applications. In order to get a better overview of them, let's assume that there are two types of problems - solved either with supervised or unsupervised learning. That said, please note this is just one of the several possible ways to&lt;/p&gt;</description><link>http://localhost:2368/supervised-and-unsupervised/</link><guid isPermaLink="false">d3a35f24-5691-4a3d-966c-f911f0394149</guid><dc:creator>Jacek Kubiak</dc:creator><pubDate>Sat, 09 Apr 2016 19:59:00 GMT</pubDate><content:encoded>&lt;p&gt;Machine learning is a broad field with plenty of applications. In order to get a better overview of them, let's assume that there are two types of problems - solved either with supervised or unsupervised learning. That said, please note this is just one of the several possible ways to categorise ML tasks. &lt;/p&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>ML Odyssey</title><description>Blog about machine learning, statistics and other Computer Science related stuff. I write about things I've learned while taking online courses.</description><link>http://localhost:2368/</link><generator>Ghost 0.7</generator><lastBuildDate>Sun, 10 Apr 2016 15:54:43 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>On supervised and unsupervised learning. Gradient descent demystified.</title><description>&lt;p&gt;Machine learning is a broad field with plenty of applications. In order to get a better overview of them, let's assume that there are two types of problems - solved either with supervised or unsupervised learning. That said, please note this is just one of the several possible ways to&lt;/p&gt;</description><link>http://localhost:2368/supervised-and-unsupervised/</link><guid isPermaLink="false">d3a35f24-5691-4a3d-966c-f911f0394149</guid><dc:creator>Jacek Kubiak</dc:creator><pubDate>Sat, 09 Apr 2016 19:59:00 GMT</pubDate><content:encoded>&lt;p&gt;Machine learning is a broad field with plenty of applications. In order to get a better overview of them, let's assume that there are two types of problems - solved either with supervised or unsupervised learning. That said, please note this is just one of the several possible ways to categorise ML tasks. &lt;/p&gt;
 
 &lt;p&gt;So what are the main differences between these two? In supervised learning, an algorithm is being fed an already labelled data (pairs called input and output also known as training data). Its job is to come up with a formula or simply 'learn' the rules that map inputs to output. A good example would be an algorithm which can predict whether a tumor is malignant or benign based on e.g. tumor size. &lt;/p&gt;
 
@@ -13,20 +13,20 @@
 &lt;p&gt;&lt;img src="http://localhost:2368/content/images/2016/04/hLhYS5J---Imgur-1.png" alt=""&gt;
 &lt;center&gt; &lt;br&gt;
 &lt;em&gt;The line is our hypothesis function whereas crosses denote single training data examples&lt;/em&gt;
-&lt;/center&gt;&lt;/p&gt;
+&lt;/center&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;We are now going to use linear regression to predict a single output value. The notion that we guess the price for a new house, one we don't have data about, is resolved around the hypothesis function. In our case, this is a straight line which tries to fit (cross, touch) as many training examples as possible. Its formula is the same as the formula for a linear function, but with slightly different notation.&lt;/p&gt;
 
 &lt;p&gt;&lt;center&gt; &lt;br&gt;
 $h_\theta(x) = \theta_0 + \theta_1 x$ &lt;br&gt;
 $\theta_0 , \theta_1 \hbox{ - adjustable params}$
-&lt;/center&gt;&lt;/p&gt;
+&lt;/center&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;The parameters determine the shape of the function. Our job is to make sure they are correct, less accurate values will result in false output prediction. Since there are no constraints on the parameters, we could pick a few starting values and using trial and error determine whether they are correct. In simpler scenarios, we can always take a glance at a chart. This technique is not foolproof but luckily there is a better option - use cost function.&lt;/p&gt;
 
 &lt;p&gt;&lt;center&gt; &lt;br&gt;
 $J(\theta_0, \theta_1) = \dfrac {1}{2m} \displaystyle \sum_{i=1}^m \left (h_\theta (x^{(i)}) - y^{(i)} \right)^2$
-&lt;/center&gt;&lt;/p&gt;
+&lt;/center&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Without going into details, this function takes theta parameters and returns a value. The lower this value is, the better params we selected. We also want to avoid a situation when the hypothesis function is underfitted, which means that it aligns with several training examples only. Our final ingredient is going to be gradient descent. This algorithm has one job, to find the suitable theta parameters.&lt;/p&gt;
 
@@ -35,7 +35,7 @@ $J(\theta_0, \theta_1) = \dfrac {1}{2m} \displaystyle \sum_{i=1}^m \left (h_\the
 &lt;p&gt;&lt;img src="http://localhost:2368/content/images/2016/04/gradient-descent.png" alt=""&gt;
 &lt;center&gt; &lt;br&gt;
 &lt;em&gt;Gradient descent algorithm - depending on a starting point, a different local optimum is found&lt;/em&gt;
-&lt;/center&gt;&lt;/p&gt;
+&lt;/center&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;The cost function combined with the gradient descent is a duo that delivers. If everything went fine, we got a proper pair of theta1, theta2 values and the hypothesis function can be used to predict house prices with very solid confidence. &lt;/p&gt;
 
@@ -52,7 +52,7 @@ $J(\theta_0, \theta_1) = \dfrac {1}{2m} \displaystyle \sum_{i=1}^m \left (h_\the
 &lt;p&gt;&lt;img src="http://localhost:2368/content/images/2016/04/Logistic-curve-svg.png" alt=""&gt;
 &lt;center&gt; &lt;br&gt;
 &lt;em&gt;The sigmoid function&lt;/em&gt;
-&lt;/center&gt;&lt;/p&gt;
+&lt;/center&gt;&lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;This function asymptotes at 0 and 1 and has everything we need. If the result is let's say 0.3, it means that it has 30% chance of belonging in the group 1 and 70% chance of being in the group 0. As a result, it gets labelled as benign tumor.&lt;/p&gt;
 
@@ -63,7 +63,8 @@ $J(\theta_0, \theta_1) = \dfrac {1}{2m} \displaystyle \sum_{i=1}^m \left (h_\the
 &lt;p&gt;Both linear and logistic regression are standard tools in the world of supervised learning. The examples in this post used only one variable for calculating the hypothesis function but we can easily use more. However finding proper theta parameters will not be as easy. It often is a mundane process, but when we finally run an algorithm and it works, the satisfaction is definitely there.&lt;/p&gt;
 
 &lt;p&gt;Sources: &lt;br&gt;
-[1] Wikipedia &lt;br&gt;
+[1] Wikipedia
+&lt;br&gt; &lt;br&gt;
 [2] Coursera&lt;/p&gt;</content:encoded></item><item><title>Neural networks - a nervous shock</title><description>&lt;p&gt;Coming soon!&lt;/p&gt;</description><link>http://localhost:2368/neural-networks-story-about-how-computers-got-nervous/</link><guid isPermaLink="false">7b3aac18-f199-4e73-b681-a2694a5197f8</guid><dc:creator>Jacek Kubiak</dc:creator><pubDate>Fri, 08 Apr 2016 22:16:56 GMT</pubDate><content:encoded>&lt;p&gt;Coming soon!&lt;/p&gt;</content:encoded></item><item><title>Getting started</title><description>&lt;p&gt;Since you've already made your way here, there is a good chance you are one of those who find artificial intelligence fascinating. I do too, hence the blog. For quite some time now, I've been closely following the news and reading up on this topic. There is no doubt that&lt;/p&gt;</description><link>http://localhost:2368/getting-started/</link><guid isPermaLink="false">30c44566-fb14-4abb-ad30-7f8fd5b07b24</guid><dc:creator>Jacek Kubiak</dc:creator><pubDate>Mon, 28 Mar 2016 16:27:21 GMT</pubDate><media:content url="http://localhost:2368/content/images/2016/03/machina.png" medium="image"/><content:encoded>&lt;img src="http://localhost:2368/content/images/2016/03/machina.png" alt="Getting started"&gt;&lt;p&gt;Since you've already made your way here, there is a good chance you are one of those who find artificial intelligence fascinating. I do too, hence the blog. For quite some time now, I've been closely following the news and reading up on this topic. There is no doubt that we are witnessing a giant progress in AI and before we realise, computers will &lt;del&gt;take over the world&lt;/del&gt; fill in the job positions that require people to perform mundane tasks and assist us in our day to day activities. &lt;/p&gt;
 
 &lt;p&gt;I'm not going to blog about how the world is going to change but instead you will here find my notes in a form of blogposts. What notes? Ah, right I forgot to tell you! I've recently enrolled to machine learning class on &lt;a href="https://www.coursera.org"&gt;Coursera&lt;/a&gt;, plus I started working through the &lt;a href="https://www.openintro.org/stat/"&gt;Open Intro Statistics textbook&lt;/a&gt;. The notes will contain the material from the sources above. Hopefully, writing them will help me get familiar with the new terms and the readers will find them worthy as well.&lt;/p&gt;
