@@ -1,3 +1,4 @@
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,13 +21,13 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="On supervised and unsupervised learning. Gradient descent demystified.">
     <meta property="og:description" content="Machine learning is a broad field with plenty of applications. In order to get a better overview of them, let's assume that there are two types of problems - solved either with supervised or unsupervised learning. That said, please note this is just one of the several possible ways to">
-    <meta property="og:url" content="http://localhost:2368/on-supervised-and-unsupervised-learning-gradient-descent-demystified/">
-    <meta property="article:published_time" content="2016-03-29T19:59:26.798Z">
-    <meta property="article:modified_time" content="2016-04-10T15:41:35.209Z">
+    <meta property="og:url" content="http://localhost:2368/supervised-and-unsupervised/">
+    <meta property="article:published_time" content="2016-04-09T19:59:00.000Z">
+    <meta property="article:modified_time" content="2016-04-10T15:44:50.151Z">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="On supervised and unsupervised learning. Gradient descent demystified.">
     <meta name="twitter:description" content="Machine learning is a broad field with plenty of applications. In order to get a better overview of them, let's assume that there are two types of problems - solved either with supervised or unsupervised learning. That said, please note this is just one of the several possible ways to">
-    <meta name="twitter:url" content="http://localhost:2368/on-supervised-and-unsupervised-learning-gradient-descent-demystified/">
+    <meta name="twitter:url" content="http://localhost:2368/supervised-and-unsupervised/">
     
     <script type="application/ld+json">
 {
@@ -41,9 +42,9 @@
         "description": "I&#x27;m a Computer Science student interested in machine learning and data science. I used to make web apps with Ruby &amp; JS at netguru.co ."
     },
     "headline": "On supervised and unsupervised learning. Gradient descent demystified.",
-    "url": "http://localhost:2368/on-supervised-and-unsupervised-learning-gradient-descent-demystified/",
-    "datePublished": "2016-03-29T19:59:26.798Z",
-    "dateModified": "2016-04-10T15:41:35.209Z",
+    "url": "http://localhost:2368/supervised-and-unsupervised/",
+    "datePublished": "2016-04-09T19:59:00.000Z",
+    "dateModified": "2016-04-10T15:44:50.151Z",
     "description": "Machine learning is a broad field with plenty of applications. In order to get a better overview of them, let&#x27;s assume that there are two types of problems - solved either with supervised or unsupervised learning. That said, please note this is just one of the several possible ways to"
 }
     </script>
@@ -94,7 +95,7 @@
         <header class="post-header">
             <h1 class="post-title">On supervised and unsupervised learning. Gradient descent demystified.</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2016-03-29">29 March 2016</time> 
+                <time class="post-date" datetime="2016-04-09">09 April 2016</time> 
             </section>
         </header>
 
@@ -150,7 +151,10 @@ $J(\theta_0, \theta_1) = \dfrac {1}{2m} \displaystyle \sum_{i=1}^m \left (h_\the
 
 <p>We are going to assign labels 0(benign) or 1(malignant) to patients' cases so it would be optimal if the hypothesis function returned values between 0 and 1. A linear function can't do that so allow me to introduce the sigmoid function!</p>
 
-<p><img src="../content/images/2016/04/Logistic-curve-svg.png" alt=""></p>
+<p><img src="../content/images/2016/04/Logistic-curve-svg.png" alt="">
+</p><center> <br>
+<em>The sigmoid function</em>
+</center>
 
 <p>This function asymptotes at 0 and 1 and has everything we need. If the result is let's say 0.3, it means that it has 30% chance of belonging in the group 1 and 70% chance of being in the group 0. As a result, it gets labelled as benign tumor.</p>
 
@@ -185,13 +189,13 @@ $J(\theta_0, \theta_1) = \dfrac {1}{2m} \displaystyle \sum_{i=1}^m \left (h_\the
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=On%20supervised%20and%20unsupervised%20learning.%20Gradient%20descent%20demystified.&amp;url=http://localhost:2368/on-supervised-and-unsupervised-learning-gradient-descent-demystified/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=On%20supervised%20and%20unsupervised%20learning.%20Gradient%20descent%20demystified.&amp;url=http://localhost:2368/supervised-and-unsupervised/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/on-supervised-and-unsupervised-learning-gradient-descent-demystified/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/supervised-and-unsupervised/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/on-supervised-and-unsupervised-learning-gradient-descent-demystified/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/supervised-and-unsupervised/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
             </section>
@@ -202,16 +206,10 @@ $J(\theta_0, \theta_1) = \dfrac {1}{2m} \displaystyle \sum_{i=1}^m \left (h_\the
 </main>
 
 <aside class="read-next">
-    <a class="read-next-story no-cover" href="../neural-networks-story-about-how-computers-got-nervous/">
+    <a class="read-next-story prev no-cover" href="../neural-networks-story-about-how-computers-got-nervous/">
         <section class="post">
             <h2>Neural networks - a nervous shock</h2>
             <p>Coming soon!…</p>
-        </section>
-    </a>
-    <a class="read-next-story prev " style="background-image: url(../content/images/2016/03/machina.png)" href="../getting-started/">
-        <section class="post">
-            <h2>Getting started</h2>
-            <p>Since you've already made your way here, there is a good chance you are one of those who find…</p>
         </section>
     </a>
 </aside>
